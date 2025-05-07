@@ -1,0 +1,229 @@
+/* ---------------------------------------------------------------------------- // FONTS \\ ---------------------------------------------------------------------------- */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Montserrat'), url('fonts/montserrat.woff') format('woff');
+    src: local('Montserrat'), url('fonts/montserrat.woff2') format('woff2');
+}
+
+
+/* ---------------------------------------------------------------------------- // GLOBALS \\ ---------------------------------------------------------------------------- */
+:root {
+    /* Text size */
+    --h1-size: 2.58em;
+    --h2-size: 1.66em;
+    --h3-size: 1.5em;
+    --h4-size: 1.33em;
+    --h5-size: 1.22em;
+    --p-size: 0.8em;
+    --a-size: 1.3em;
+    --button-size: 0.85em;
+
+    /* Text color */
+    --h1-color: rgba(196, 195, 202, 0.764);
+    --h2-color: rgba(230, 230, 230, 0.891);
+    --h3-color: rgba(212, 212, 212, 0.841);
+    --h4-color: rgba(222, 222, 226, 0.77);
+    --h5-color: rgba(185, 185, 187, 0.72);
+    --p-color: rgba(255, 255, 255, 0.612);
+    --a-color: rgba(225, 225, 225, 0.698);
+    --a-hover-color: rgba(251, 251, 251, 0.994);
+    
+    /* Box / Container / Frame */
+    --frame-border-color: rgb(96, 93, 93);
+    --frame-border-radius: 8px;
+    --frame-background-color: rgba(17, 18, 20, 0.182);
+    --frame-box-shadow-color: rgba(72, 70, 70, 0.334);
+    --hovered-frame-box-shadow-color: rgba(72, 70, 70, 0.418);
+    --hovered-frame-border-color: rgb(52, 52, 52);
+
+
+    /* Button */
+    --button-border-color: rgba(0, 0, 0, 0.13);
+    --button-background-color: rgba(111, 111, 111, 0.354);
+    --button-hover-background-color: rgba(92, 77, 77, 0.222);
+}
+
+/* ---------------------------------------------------------------------------- // ELEMENT \\ ---------------------------------------------------------------------------- */
+
+body {
+	margin: 0;
+	padding: 0;
+    background: rgb(45,53,62);
+    background: linear-gradient(10deg, rgba(45,53,62,1) 0%, rgba(50,51,61,1) 50%, rgba(37,40,56,1) 100%);
+}
+
+h1 {
+    font-size: var(--h1-size);
+    font-family: 'Montserrat';
+    color: rgba(164, 162, 178, 0.812);
+    width: fit-content;
+    margin-block: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    height: fit-content;
+    color: var(--h1-color);
+}
+
+h2 {
+    font-size: var(--h2-size);
+    font-family: 'Montserrat';
+    color: rgba(57, 55, 72, 0.67);
+    color: var(--h2-color);
+    margin: 0;
+}
+
+h3 {
+    font-size: var(--h3-size);
+    font-family: 'Montserrat';
+    color: rgba(57, 55, 72, 0.67);
+    color: var(--h3-color);
+    margin: 0;
+}
+
+h4 {
+    font-size: var(--h4-size);
+    font-family: 'Montserrat';
+    color: rgba(57, 55, 72, 0.67);
+    color: var(--h4-color);
+    margin: 0;
+}
+
+h5 {
+    font-size: var(--h5-size);
+    font-family: 'Montserrat';
+    color: rgba(57, 55, 72, 0.67);
+    color: var(--h5-color);
+    margin: 0;
+}
+
+p {
+    font-size: var(--p-size);
+    font-family: 'Montserrat';
+    color: rgba(57, 55, 72, 0.67);
+    color: var(--p-color);
+}
+
+a {
+    font-size: var(--a-size);
+    font-family: 'Montserrat';
+    text-decoration: 0;
+    color: var(--a-color);
+    font-style: italic;
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: var(--a-hover-color);
+}
+
+header {
+    height: 10vh;
+    /* border: 1px dashed red; */
+    padding: 0px 5px;
+    backdrop-filter: brightness(1.05);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    border-bottom: 1px solid var(--frame-border-color);
+}
+
+main {
+    /* border: 1px dashed blue; */
+    height: 90vh;
+    padding: 45px 10px;
+}
+
+button {
+    border: 1px solid var(--button-border-color);
+    background-color: var(--button-background-color);
+    transition: all 0.3s;
+    font-size: var(--button-size);
+    border-radius: 3px;
+    color: var(--p-color);
+    cursor: pointer;
+    font-size: var(--button-size);
+    font-family: 'Montserrat';
+}
+
+button:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+/* ---------------------------------------------------------------------------- // CLASS \\ ---------------------------------------------------------------------------- */
+.header-title {
+    animation: title-animation 4s infinite alternate ease;
+}
+
+.box {
+    background-color: var(--frame-background-color);
+    border: 1px solid var(--frame-border-color);
+    border-radius: var(--frame-border-radius);
+    box-shadow: 0px 0px 4px var(--frame-box-shadow-color);
+    transition: all 0.55s;
+}
+
+.box:hover {
+    box-shadow: 0px 0px 4px var(--hovered-frame-box-shadow-color);
+    border-color: var(--hovered-frame-border-color);
+}
+
+#frame-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#frame-container .frame {
+    margin: 0px 10px;
+    padding: 5px 3px;
+}
+
+#frame-container .frame h2 {
+    text-align: center;
+}
+
+#frame-container .frame .info-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+#frame-container .frame .buttons-container {
+    border-top: 1px solid white;
+    padding-top: 10px;
+}
+
+
+/* ---------------------------------------------------------------------------- // ANIMATION \\ ---------------------------------------------------------------------------- */
+@keyframes title-animation {
+    0% {
+        color: rgba(230, 230, 230, 0.999);
+        text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.243);
+    }
+    
+    50% {
+        color: rgba(230, 230, 230, 0.691);
+        text-shadow: 0px 0px 3px rgba(200, 200, 200, 0.526);
+    }
+    
+    100% {
+        color: rgba(171, 171, 171, 0.999);
+        text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.254);
+    }
+}
+
+@media (max-width: 400px) {
+    #frame-container {
+        flex-direction: column;
+    }
+    #frame-container .frame {
+        margin-bottom: 16px;
+    }
+} 
