@@ -1,1 +1,5 @@
 pyenv/
+flask_app.py
+logs.txt
+*.crt
+*.key
